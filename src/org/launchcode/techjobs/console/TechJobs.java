@@ -2,6 +2,7 @@ package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ public class TechJobs {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -20,7 +21,7 @@ public class TechJobs {
         columnChoices.put("location", "Location");
         columnChoices.put("position type", "Position Type");
         columnChoices.put("all", "All");
-
+        ;
         // Top-level menu options
         HashMap<String, String> actionChoices = new HashMap<>();
         actionChoices.put("search", "Search");
@@ -103,7 +104,7 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
@@ -111,6 +112,29 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        for (HashMap<String, String> job : someJobs) {
+                     System.out.println("****\n" + job.entrySet() + ": " + "****");
+
+                       for (Map.Entry<String, String> entry : job.entrySet()) {
+            //           ArrayList<HashMap<String, String>> job = someJobs;
+
+ //           for (int i = 0; i < job.size(); i++) { //with line 115 this prints out an array
+                //System.out.print(job.entrySet());
+                    //               System.out.println("****\n"+job.entrySet()+"\n****");
+
+                           //if (entry.getValue().contains(getUserSelection("Search by: ",choices))) {
+//                System.out.println("****\n" + entry + "\n****");
+                    System.out.println("****\n" + (entry.getKey() + ": " + entry.getValue()) + "\n****");
+//
+//                    } else {
+//                        System.out.println("None found, try another search");
+//                    }
+//                }
+                    //System.out.println("printJobs is not implemented yet");
+
+                }
+
+            }
+        }
     }
-}
+
