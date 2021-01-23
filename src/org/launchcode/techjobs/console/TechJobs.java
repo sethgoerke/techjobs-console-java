@@ -62,6 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
+                   printJobs(JobData.findByValue(searchTerm));
                     System.out.println("Search all fields not yet implemented.");
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
@@ -111,20 +112,15 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        System.out.println(someJobs.size());
 
+        if (someJobs.size() == 0){
+            System.out.println("No jobs fit that criteria!");
+        }
         for (HashMap<String, String> job : someJobs) {
-
+            System.out.println("\n****");
             for (Map.Entry<String, String> entry : job.entrySet()) {
                 System.out.println(  (entry.getKey() + ": " + entry.getValue()) );
-
-                String searchJob = in.nextLine();
-                System.out.println(searchJob);
-
-                if(searchJob.equals(entry.getValue())){
-                        System.out.println("it works");
-                    }else {
-                       System.out.println("None found, try another search");
-                   }
             }
 
         }
@@ -132,42 +128,4 @@ public class TechJobs {
 }
 
 
-            //         System.out.println("****\n" + job.entrySet() + ": " + "****");
- //           System.out.println("****\n" + job.values() + ": " + "****");
-//            System.out.println("*****");
-//            System.out.println( "Core Competency: " + job.get("core competency"));
-//            System.out.println( "Employer: " + job.get("employer" ));
-//            System.out.println( "Location: " + job.get("location" ));
-//            System.out.println( "Position Type: " + job.get("position type"));
-//            System.out.println("*****");
 
-
-           // for (Map.Entry<String, String> entry : job.entrySet()) {
-
-//                         ArrayList<HashMap<String, String>> job = someJobs;
-//
-//                          for (int i = 0; i < job.size(); i++) { //with line 115 this prints out an array
-//
-//                              System.out.print(job.get(i));
-                //               System.out.println("****\n"+job.entrySet()+"\n****");
-               // String jobField = getUserSelection("Search by:", columnChoices);
-  //              if (entry.getValue()) {
-                                  //System.out.println("****\n" + entry + "\n****");
-                   // System.out.println(  (entry.getKey() + ": " + entry.getValue()) );
-//
- //                  } else {
-//                        System.out.println("None found, try another search");
-//                    }
-//                }
-                    //System.out.println("printJobs is not implemented yet");
-
-//                }
-//
-//            }
-//        }
-//    }
-//}
-
-
-//(!entry.getValue().equals(entry))
-//(searchJob.equals(entry.getValue()))
