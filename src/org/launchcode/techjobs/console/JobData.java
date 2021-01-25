@@ -7,10 +7,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -77,7 +74,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value)) {
                 jobs.add(row);
             }
         }
@@ -138,25 +135,13 @@ public class JobData {
             for(String key : row.keySet()){
                 String aValue = row.get(key);
 
-                if (aValue.contains(values)){
+                if (aValue.toLowerCase().contains(values)){
                     jobs.add(row);
                     break;
                 }
-
             }
         }
         return jobs;
   }
 }
 
-    //)
-
-//for (Map.Entry<String, String> entry : row.entrySet()) {
-//  System.out.println(entry.getValue());
-
-////                boolean found = entry.contains(value);
-////                if (!found) {
-////                    jobs.add(value);
-////                } else {
-////                    System.out.println("try again");
-////                }
