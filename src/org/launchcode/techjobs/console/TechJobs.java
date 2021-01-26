@@ -1,6 +1,9 @@
 package org.launchcode.techjobs.console;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Created by LaunchCode
@@ -119,6 +122,7 @@ public class TechJobs {
             System.out.println("\n****");
             for (Map.Entry<String, String> entry : job.entrySet()) {
                 System.out.println(  (entry.getKey() + ": " + entry.getValue()) );
+
             }
 
         }

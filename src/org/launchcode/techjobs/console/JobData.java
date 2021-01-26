@@ -41,6 +41,7 @@ public class JobData {
             }
         }
 
+        Collections.sort(values);
         return values;
     }
 
